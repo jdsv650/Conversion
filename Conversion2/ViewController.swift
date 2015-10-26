@@ -24,7 +24,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     @IBAction func changedFtPerInch(sender: UITextField)
     {
-        if let newScale = sender.text.toInt()
+        if let newScale = Int(sender.text!)
         {
             footSpecified = newScale
             calculateAndDisplayTotal()
@@ -34,9 +34,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             sender.text = ""
         }
         
+        
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         ftTF.resignFirstResponder()
     }
 
@@ -75,13 +76,13 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func calculateAndDisplayTotal()
     {
         var theTotal = 0.0
-        var wholeRow = inchesPicker.selectedRowInComponent(0)  // selected whole part
-        var fractionRow = inchesPicker.selectedRowInComponent(1)  // selected fraction
+        let wholeRow = inchesPicker.selectedRowInComponent(0)  // selected whole part
+        let fractionRow = inchesPicker.selectedRowInComponent(1)  // selected fraction
         
-        var wholePart = Double(footSpecified * inches[0][wholeRow].toInt()!)
+        let wholePart = Double(footSpecified * Int(inches[0][wholeRow])!)
         theTotal += wholePart
         
-        var fractionAsNum = Double(footSpecified) * decimals[fractionRow]
+        let fractionAsNum = Double(footSpecified) * decimals[fractionRow]
         theTotal += fractionAsNum
         
         total.text = "\(theTotal) ft"

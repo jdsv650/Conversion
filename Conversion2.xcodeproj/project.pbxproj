@@ -156,6 +156,8 @@
 		1ABA56A31B4CBFAB00676872 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0710;
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = James;
 				TargetAttributes = {
@@ -341,6 +343,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Conversion2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -351,6 +354,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Conversion2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -409,6 +413,7 @@
 				1ABA56CC1B4CBFAB00676872 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1ABA56CD1B4CBFAB00676872 /* Build configuration list for PBXNativeTarget "Conversion2Tests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +422,7 @@
 				1ABA56CF1B4CBFAB00676872 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
