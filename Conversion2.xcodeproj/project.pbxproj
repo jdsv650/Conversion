@@ -13,6 +13,9 @@
 		1ABA56B81B4CBFAB00676872 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ABA56B71B4CBFAB00676872 /* Images.xcassets */; };
 		1ABA56BB1B4CBFAB00676872 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ABA56B91B4CBFAB00676872 /* LaunchScreen.xib */; };
 		1ABA56C71B4CBFAB00676872 /* Conversion2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA56C61B4CBFAB00676872 /* Conversion2Tests.swift */; };
+		1ABA9DD41BFD915E00970469 /* DecimalToInchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA9DD31BFD915E00970469 /* DecimalToInchesViewController.swift */; };
+		1ABA9DD81BFE6E4100970469 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA9DD71BFE6E4100970469 /* ChartViewController.swift */; };
+		1ABA9DDC1BFEA05200970469 /* fractions-to-decimals2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ABA9DDB1BFEA05200970469 /* fractions-to-decimals2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		1ABA56C01B4CBFAB00676872 /* Conversion2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Conversion2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ABA56C51B4CBFAB00676872 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1ABA56C61B4CBFAB00676872 /* Conversion2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversion2Tests.swift; sourceTree = "<group>"; };
+		1ABA9DD31BFD915E00970469 /* DecimalToInchesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecimalToInchesViewController.swift; sourceTree = "<group>"; };
+		1ABA9DD71BFE6E4100970469 /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		1ABA9DDB1BFEA05200970469 /* fractions-to-decimals2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fractions-to-decimals2.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,8 @@
 			children = (
 				1ABA56B01B4CBFAB00676872 /* AppDelegate.swift */,
 				1ABA56B21B4CBFAB00676872 /* ViewController.swift */,
+				1ABA9DD31BFD915E00970469 /* DecimalToInchesViewController.swift */,
+				1ABA9DD71BFE6E4100970469 /* ChartViewController.swift */,
 				1ABA56B41B4CBFAB00676872 /* Main.storyboard */,
 				1ABA56B71B4CBFAB00676872 /* Images.xcassets */,
 				1ABA56B91B4CBFAB00676872 /* LaunchScreen.xib */,
@@ -90,6 +98,7 @@
 		1ABA56AE1B4CBFAB00676872 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1ABA9DDB1BFEA05200970469 /* fractions-to-decimals2.png */,
 				1ABA56AF1B4CBFAB00676872 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -158,7 +167,7 @@
 			attributes = {
 				LastSwiftMigration = 0710;
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = James;
 				TargetAttributes = {
 					1ABA56AA1B4CBFAB00676872 = {
@@ -195,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1ABA56B61B4CBFAB00676872 /* Main.storyboard in Resources */,
+				1ABA9DDC1BFEA05200970469 /* fractions-to-decimals2.png in Resources */,
 				1ABA56BB1B4CBFAB00676872 /* LaunchScreen.xib in Resources */,
 				1ABA56B81B4CBFAB00676872 /* Images.xcassets in Resources */,
 			);
@@ -214,8 +224,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ABA9DD41BFD915E00970469 /* DecimalToInchesViewController.swift in Sources */,
 				1ABA56B31B4CBFAB00676872 /* ViewController.swift in Sources */,
 				1ABA56B11B4CBFAB00676872 /* AppDelegate.swift in Sources */,
+				1ABA9DD81BFE6E4100970469 /* ChartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +290,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -345,6 +358,7 @@
 				INFOPLIST_FILE = Conversion2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jdsv650.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -356,6 +370,7 @@
 				INFOPLIST_FILE = Conversion2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jdsv650.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -374,6 +389,7 @@
 				);
 				INFOPLIST_FILE = Conversion2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jdsv650.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Conversion2.app/Conversion2";
 			};
@@ -389,6 +405,7 @@
 				);
 				INFOPLIST_FILE = Conversion2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jdsv650.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Conversion2.app/Conversion2";
 			};
