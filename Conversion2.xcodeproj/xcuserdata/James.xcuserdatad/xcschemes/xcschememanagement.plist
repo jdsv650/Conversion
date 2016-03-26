@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Conversion2 WatchKit App.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>Conversion2.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>1A6088EE1CA4919F00727C51</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1ABA56AA1B4CBFAB00676872</key>
 		<dict>
 			<key>primary</key>
