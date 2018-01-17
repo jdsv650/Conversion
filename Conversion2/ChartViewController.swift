@@ -36,7 +36,7 @@ class ChartViewController: UIViewController, UIScrollViewDelegate {
         scrollView.contentSize = image.size
         
         // 3
-        var doubleTapRecognizer = UITapGestureRecognizer(target: self, action: "scrollViewDoubleTapped:")
+        let doubleTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(ChartViewController.scrollViewDoubleTapped(_:)))
         doubleTapRecognizer.numberOfTapsRequired = 2
         doubleTapRecognizer.numberOfTouchesRequired = 1
         scrollView.addGestureRecognizer(doubleTapRecognizer)
@@ -79,9 +79,9 @@ class ChartViewController: UIViewController, UIScrollViewDelegate {
     }
 
     
-    func scrollViewDoubleTapped(recognizer: UITapGestureRecognizer) {
+    @objc func scrollViewDoubleTapped(_ recognizer: UITapGestureRecognizer) {
         // 1
-        let pointInView = recognizer.locationInView(imageView)
+        let pointInView = recognizer.location(in: imageView)
         
         // 2
         var newZoomScale = scrollView.zoomScale * 0.5
@@ -94,18 +94,18 @@ class ChartViewController: UIViewController, UIScrollViewDelegate {
         let x = pointInView.x - (w / 2.0)
         let y = pointInView.y - (h / 2.0)
         
-        let rectToZoomTo = CGRectMake(x, y, w, h);
+        let rectToZoomTo = CGRect(x: x, y: y, width: w, height: h);
         
         // 4
-        scrollView.zoomToRect(rectToZoomTo, animated: true)
+        scrollView.zoom(to: rectToZoomTo, animated: true)
     }
     
     
-    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imageView
     }
     
-    func scrollViewDidZoom(scrollView: UIScrollView) {
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
         centerScrollViewContents()
     }
     

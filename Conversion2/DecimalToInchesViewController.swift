@@ -48,39 +48,39 @@ class DecimalToInchesViewController: UIViewController, UIPickerViewDataSource, U
     
     
     // returns the number of 'columns' to display.
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int
+    func numberOfComponents(in pickerView: UIPickerView) -> Int
     {
             return whole.count
     }
     
     // returns the # of rows in each component..
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
     {
         return whole[component].count
     }
     
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
     {
         return whole[component][row]
         
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
         var decimal1AsString: String = ""
         var decimal2AsString: String = ""
         
         
-        let number1AsString = whole[0][num1Picker.selectedRowInComponent(0)] + whole[1][num1Picker.selectedRowInComponent(1)] + whole[2][num1Picker.selectedRowInComponent(2)]
+        let number1AsString = whole[0][num1Picker.selectedRow(inComponent: 0)] + whole[1][num1Picker.selectedRow(inComponent: 1)] + whole[2][num1Picker.selectedRow(inComponent: 2)]
             
       //  let number1AsInteger = (number1AsString as NSString).integerValue
-            decimal1AsString = "\(number1AsString).\(num1Picker.selectedRowInComponent(4))\(num1Picker.selectedRowInComponent(5))"
+            decimal1AsString = "\(number1AsString).\(num1Picker.selectedRow(inComponent: 4))\(num1Picker.selectedRow(inComponent: 5))"
      
-            let number2AsString = whole[0][num2Picker.selectedRowInComponent(0)] + whole[1][num2Picker.selectedRowInComponent(1)] + whole[2][num2Picker.selectedRowInComponent(2)]
+            let number2AsString = whole[0][num2Picker.selectedRow(inComponent: 0)] + whole[1][num2Picker.selectedRow(inComponent: 1)] + whole[2][num2Picker.selectedRow(inComponent: 2)]
         
            // let number2AsInteger = (number2AsString as NSString).integerValue
-              decimal2AsString = "\(number2AsString).\(num2Picker.selectedRowInComponent(4))\(num2Picker.selectedRowInComponent(5))"
+              decimal2AsString = "\(number2AsString).\(num2Picker.selectedRow(inComponent: 4))\(num2Picker.selectedRow(inComponent: 5))"
     
         
         let num1AsDouble = (decimal1AsString as NSString).doubleValue
@@ -96,7 +96,7 @@ class DecimalToInchesViewController: UIViewController, UIPickerViewDataSource, U
     }
     
     
-    func displayInFeetAndInches(result :Double)
+    func displayInFeetAndInches(_ result :Double)
     {
         
         let feet = Int(result)
@@ -108,7 +108,7 @@ class DecimalToInchesViewController: UIViewController, UIPickerViewDataSource, U
     }
     
 
-    func roundToPlaces(value:Double, places:Int) -> Double {
+    func roundToPlaces(_ value:Double, places:Int) -> Double {
         let divisor = pow(10.0, Double(places))
         return round(value * divisor) / divisor
     }

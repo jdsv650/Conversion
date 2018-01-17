@@ -22,7 +22,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     var decimals = [0, 0.0625, 0.125, 0.1875, 0.25, 0.3125, 0.375, 0.4375, 0.5, 0.5625, 0.625, 0.6875, 0.75, 0.8125, 0.875, 0.9375]
     
     
-    @IBAction func changedFtPerInch(sender: UITextField)
+    @IBAction func changedFtPerInch(_ sender: UITextField)
     {
         if let newScale = Int(sender.text!)
         {
@@ -37,7 +37,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         ftTF.resignFirstResponder()
     }
 
@@ -50,25 +50,25 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 
 
     // returns the number of 'columns' to display.
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int
+    func numberOfComponents(in pickerView: UIPickerView) -> Int
     {
         return inches.count
     }
     
     // returns the # of rows in each component..
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
     {
     return inches[component].count
     }
     
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
     {
         return inches[component][row]
 
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
         calculateAndDisplayTotal()
     }
@@ -76,8 +76,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func calculateAndDisplayTotal()
     {
         var theTotal = 0.0
-        let wholeRow = inchesPicker.selectedRowInComponent(0)  // selected whole part
-        let fractionRow = inchesPicker.selectedRowInComponent(1)  // selected fraction
+        let wholeRow = inchesPicker.selectedRow(inComponent: 0)  // selected whole part
+        let fractionRow = inchesPicker.selectedRow(inComponent: 1)  // selected fraction
         
         let wholePart = Double(footSpecified * Int(inches[0][wholeRow])!)
         theTotal += wholePart
